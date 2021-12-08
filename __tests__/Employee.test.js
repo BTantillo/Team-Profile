@@ -3,13 +3,14 @@ const Employee = require('../lib/Employee')
 const Engineer = require('../lib/Engineer')
 const Mananger = require('../lib/Manager')
 const Intern = require('../lib/Intern');
+const { getMaxListeners } = require("process");
 
 test('creates an employee object', () => {
-    const worker = new Employee('');
+    const worker = new Employee("George", "12345", 'ge@gmail.com');
 
 
-expect(worker.name).toBe('');
-expect(worker.idnumber).toEqual(expect.any(String));
-expect(worker.emailaddress).toEqual(expect.any(String));
+expect(worker.name).toBe('George');
+expect(worker.id).toEqual(expect.any(String));
+expect(worker.email).toEqual(expect.any(String));
 })
 
