@@ -217,26 +217,40 @@ function createHtml() {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        /*link css here!/*
+        <link rel="stylesheet" href="dist/style.css">
         <title>Team Profile</title>
     </head>
+    <header>
+    <h1 class="team-heading">Team Profile</h1>
+    </header>
+
     <body>
     `
-    arrayManager.forEach((manger) => {
+    arrayManager.forEach((manager) => {
         html += `
-        <h1>${manger.name}</h1>
-        <p>${manger.emailAddress}</p>
-        <p>${manger.officeNumber}</p>
-        <p>${manger.idNumber}</p>
+        <h1>${manager.name}</h1>
+        <p>${manager.idNumber}</p>
+        <p>${manager.emailAddress}</p>
+        <p>${manager.officeNumber}</p>
         `
     })
 
     arrayEngineer.forEach((engineer) => {
-        html += `<h1>${engineer.name}</h1>`
+        html += `
+        <h1>${engineer.name}</h1>
+        <p>${engineer.emailAddress}</p>
+        <p>${engineer.whatGithub}</p>
+        <p>${engineer.idNumber}</p>
+        `
     })
 
     arrayIntern.forEach((intern) => {
-        html += `<h1>${intern.name}</h1>`
+        html += `
+        <h1>${intern.name}</h1>
+        <p>${intern.emailAddress}</p>
+        <p>${intern.whichSchool}</p>
+        <p>${intern.idNumber}</p>
+        `
     })
 
     html += `
