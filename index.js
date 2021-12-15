@@ -16,7 +16,7 @@ function addTeammember() {
         message: "What type of employee do you want to add?",
         type: "list",
         name: "workerType",
-        choices: ["Engineer", "Intern", "Manager", "Exit"]
+        choices: ["Manager", "Engineer", "Intern", "Exit"]
 
     })
     .then(employeeAdded => {
@@ -217,7 +217,7 @@ function createHtml() {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="dist/style.css">
+        <link rel="stylesheet" href="style.css">
         <title>Team Profile</title>
     </head>
     <header>
@@ -228,35 +228,50 @@ function createHtml() {
     `
     arrayManager.forEach((manager) => {
         html += `
-        <h1>${manager.name}</h1>
-        <p>${manager.idNumber}</p>
-        <p>${manager.emailAddress}</p>
-        <p>${manager.officeNumber}</p>
-        `
+        <div class="employee-card">
+        <h1>Manager</h1>
+        <h2>Name: ${manager.name}</h2>
+        <p>Id:${manager.id}</p>
+        <p>Email:${manager.email}</p>
+        <p>Office Number: ${manager.officeNumber}</p>
+        </div>`
+        console.log(manager)
     })
+
+
+    html += '<br>'
+
 
     arrayEngineer.forEach((engineer) => {
         html += `
-        <h1>${engineer.name}</h1>
-        <p>${engineer.emailAddress}</p>
-        <p>${engineer.whatGithub}</p>
-        <p>${engineer.idNumber}</p>
-        `
+        <div class="employee-card">
+        <h1>Engineer</h1>
+        <h2>Name: ${engineer.name}</h2>
+        <p>Id: ${engineer.id}</p>
+        <p>Email: ${engineer.email}</p>
+        <p>Github: ${engineer.github}</p>
+        </div>`
+        console.log(engineer)
     })
+
+    html += '<br>'
 
     arrayIntern.forEach((intern) => {
         html += `
-        <h1>${intern.name}</h1>
-        <p>${intern.emailAddress}</p>
-        <p>${intern.whichSchool}</p>
-        <p>${intern.idNumber}</p>
-        `
+        <div class="employee-card">
+        <h1>Intern</h1>
+        <h2>Name:${intern.name}</h2>
+        <p>Id: ${intern.id}</p>
+        <p>Email: ${intern.email}</p>
+        <p>College: ${intern.college}</p>
+        </div>`
+        console.log(intern)
+
     })
 
     html += `
     </body>
     </html>`
- console.log(html)
     fs.writeFileSync('./dist/test.html', html, 'utf-8') 
 
     process.exit()

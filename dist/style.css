@@ -1,12 +1,12 @@
 .team-heading {
     background-color: grey;
     color: #e84855;
-  }
-  
-  .team-area {
     max-width: 1000px;
     margin: 3em auto;
     flex-wrap: wrap;
+    display: flex;
+    border: solid;
+    border-color: black;
   }
   
   .employee-card {
@@ -17,16 +17,12 @@
     background-color: #e84855;
     color: white;
     display: flex;
+    float: left;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-    border: none;
+    border: solid;
   }
   
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f6f7f8;
-  }
+  
   
